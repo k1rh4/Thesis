@@ -1,0 +1,22 @@
+
+\begin{table}[!t]
+\caption{Estimated insecure stmart contracts}
+\label{escvTable}
+%\begin{center}
+\begin{tabular} {ccccccccccc}
+\hline\hline
+& & send\_dereffered[] & db\_store\_i64[3-5] & db\_update\_i64[\^1][2] & memcpy[2] & strcpy[2] \\
+\hline
+& $Total API calls$	& 790 	&  	8,059	& 11,620	& 205,033 	& 63	&\\
+& $Reachable APIs$	&  117 	&	11		& 7			& 393		& 1		&\\
+\hline\hline
+\end{tabular}
+\begin{tablenotes}
+\item Total: 2960 smart-contracts
+\item "[num]" means that argv[num] reachability
+\item "[\^n]" means that All argument except argv[\^n]
+\end{tablenotes}
+
+%\end{center}
+
+\end{table}

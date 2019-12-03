@@ -1,0 +1,120 @@
+\chapter{Mitigation}
+\label{s:mit}
+
+In this section, we propose mitigation methods for the presented attacks. We
+first enumerate precautionary suggestions that require no changes to the current
+\eos system. We then discuss several design changes to the \eos system to remove
+the root causes of the attacks presented herein.
+
+
+\section{Preventative measures against attacks}
+\label{ss:simple}
+
+The \TESER, \SCPDOS, and \TOCTOU attacks can be easily prevented if \SCPs and
+users carefully inspect their \SC source code as well as the \SCPs.
+%
+For the \TESER attack, an \SCP should verify if the code exists in their \SC that checks the SC's callers in a manner that they cannot abuse.
+%
+For example, one can add a permission check at the beginning of the \SC, so that
+only authorized users can use the \SC.
+%
+On the other hand, to prevent the \SCPDOS attack, \SCPs should carefully audit their 
+\SCs to determine whether there exists code that mistakenly uses their \ram.
+%
+In the case of the \TOCTOU attack, a \user should give his/her permission code 
+only to the fully trusted \SCPs.
+
+These simple preventions seem to be textbook examples, and none of them requires
+any change to the underlying \PLATFORM architecture. To render the system more
+secure, however, we do believe that the system must do its best effort to address
+threats from every entity in the system.
+%
+For instance, in case of the \TESER attack, the \eos system can improve its security by
+adding extra security components to it.
+%
+This approach is not uncommon as one of the largest systems, a Linux kernel,
+adopted a similar concept to alleviate the threats derived from mistakenly
+omitted permission checks~\cite{mcclure2009hacking}.
+%
+In the following subsections, we discuss potential changes to the \eos system to
+fundamentally eliminate the root causes of the attacks presented above.
+
+\section{Shifting the payment responsibility}
+\label{ss:shifting}
+
+As described in~\S\ref{label_teser}, in the \TESER attack, a malicious user intentionally
+triggers a target SC to deplete the \cpu of its SCP. Of course, an SCP can
+prevent this by carefully inspecting the code of their SC. However, this attack
+stems from the current design that encourages \SCPs to pay for the execution of
+their \SCs originating from user transactions.
+
+In the current \eos system, to impose the transaction cost on a specific user,
+an \SCP has to specify the user as authorized in the \SC, and this process
+requires the \code permission from the user. In general, users are not normally
+willing to grant this permission code since anyone with the code is able to
+control the user account.
+%
+To avoid this, an SCP is supposed to create an SC with his/her own permission
+code that imposes the transaction cost of executing the SC onto the SCP
+himself/herself so that any user can be pleasant for the execution of the SC
+without providing the permission or paying the cost.
+%
+Therefore, our design change suggestion removes the constraints of SCPs, thus
+enabling them to avoid using their own resources, which also eliminates the
+target of the attacker.
+
+One way to address the \TESER attack could be to redesign the \eos system so that a user
+who initiates a transaction should pay the transaction cost without having to
+provide the \code permission.
+%
+It is quite intuitive to impose a transaction cost on the user who actually
+wants to run the SC.
+%
+This fundamentally eliminates the liability of checking the permission of the
+SC, as well as the benefit of the attack---thus, the adversary would no longer be
+motivated to commit it.
+
+On the other hand, this mitigation increases the possibility of opposite
+cases in which a malicious SC could deplete the resources of a user because it 
+does not need the permission code of the user.
+%
+Even when the user chooses to run a malicious SC, the system should be
+responsible for alleviating the severity of the threat.
+%
+However, as the current \eos system supports limiting the maximum resource use
+for running an SC, this can be mitigated as well~\cite{resourcemaxusage}.
+
+\section{Fine-grained permission control}
+\label{ss:fine}
+
+The root cause of the \TOCTOU attack is a user giving his/her permission code
+(\code) to an SCP in the belief that the SCP will not abuse this permission.
+This, in fact, can be considered the fault of the user as s/he gives permission
+with full awareness of the significance of their action. Nevertheless, the \eos
+design can be changed to protect users from these kinds of threats.
+
+Currently, the \eos permission system pursues an all-or-nothing
+approach. That is, a user can make only one kind of action regarding his/her
+permission---either give or revoke it.
+%
+This fundamentally facilitates threats on assets in \eos, including the \TOCTOU
+attack.
+%
+The \eos developers are also aware of this issue and have proposed pinning
+the permission into a specific version of the target SC. However, this still remains
+an unresolved issue~\cite{EOSEOSIOCODE}.
+%
+Nevertheless, we have proven the feasibility of this threat, as shown
+in~\S\ref{label_toctou}, and here we suggest possible mitigation that can eradicate
+such threats.
+
+We propose a fine-grained permission control, including the permission pinning 
+described above. It enables a user to set a specific period or a specific
+version that the permission depends on. As a result, in case of the 
+\TOCTOU attack, even though a malicious SCP replaces a benign SC with a 
+fraudulent one, the given permission would automatically lose its validity. 
+Moreover, the expiration date of the permission can reduce the feasibility of 
+the threats occurring because a user might forget to revoke permission.
+%
+Therefore, the fine-grained permission control can help to mitigate several
+threats to the \eos assets.

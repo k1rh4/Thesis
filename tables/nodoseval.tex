@@ -1,0 +1,50 @@
+
+
+\begin{table}[!t]
+\centering
+\setlength\tabcolsep{0.07cm}
+\caption{Estimated financial loss by the \NODEDOS attack}
+\label{tab:nodedos_eval}
+
+\begin{threeparttable}
+\begin{tabular}{@{}rrcccrccr@{}}
+\toprule
+
+\multirow{2}[6]{*}{\textbf{\begin{tabular}[c]{@{}c@{}} Block \\ Count \end{tabular}}} &
+&
+\multicolumn{4}{c}{\textbf{Attacker}} &
+&
+\multicolumn{2}{c}{\textbf{Victim}}
+\\
+\cmidrule{3-6}
+\cmidrule{8-9}
+&
+&
+\multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}} Time\tnote{$\dagger$} \\ (min)\end{tabular}} &
+\multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}} \cpu \\ (min)\end{tabular}} &
+\multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}} \net \\ (MiB)\end{tabular}} &
+\multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}} Cost\tnote{$\ddagger$} \\ (EOS)\end{tabular}} &
+&
+\multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}} Delay \\ (min)\end{tabular}} &
+\multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}} Loss\tnote{$\ast$} \\ (EOS)\end{tabular}}
+\\
+\midrule
+376   &  & 0.92    & 1.23  & 16.13   & 480   &  & 2.05 & 40,802  \\
+704   &  & 2.06    & 2.32  & 34.72   & 910   &  & 3.56 & 70,856  \\
+1,106 &  & 3.02    & 3.65  & 50.82   & 1,426  &  & 5.67 & 112,851  \\
+1,471 &  & 4.00    & 4.85  & 65.53   & 1,894  &  & 7.46 & 148,478  \\
+1,840 &  & 5.04    & 6.07  & 79.69   & 2,368  &  & 9.12 & 181,518 \\
+\bottomrule
+\end{tabular}
+
+\footnotesize
+\begin{tablenotes}
+\item [$\ast$] We estimated the loss of \eos from the total volume of traded EOS
+    tokens in April 2019.
+\item [$\dagger$] As this attack creates a large number of transactions, it was
+    difficult to precisely control the attack duration.
+\item [$\ddagger$] The attack cost is estimated by multiplying the total staked
+    EOS tokens by the ratio of the used \cpu and \net to their total capacity.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

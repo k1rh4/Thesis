@@ -1,0 +1,105 @@
+\chapter{Related work}
+
+%To the best of our knowledge, no research has analyzed the risk of \PLATFORM
+%architecture. Several studies focused on inspecting the \ETHER's \SC
+%vulnerabilities and blockchains, and There are some \PLATFORM's vulnerabilities
+%on online. The system architecture of \PLATFORM's features across different
+%environments with other blockchain platforms
+
+%\subsection{블록체인에서의 취약점 연구 사례}
+%\ETAL
+% [합의 알고리즘] I. Eyal \ETAL \cite{eyal2018majority}: Selfishi mining [합의
+% 알고리즘] I. Eyal, "The miner's dilemma", IEEE S&P'15: BWH 공격 얘기.. [합의
+% 알고리즘] Y. Kwon, D. Kim, Y. Son, E. Vasserman, Y. Kim, "Be Selfish and Avoid
+% Dilemmas:Fork After Withholding (FAW) Attacks on Bitcoin", ACM CCS'17: PAW
+% 공격 얘기..
+
+% [블록체인을 운영하는 노드를 공격함.] E. Heilman, A. Kendler, A. Zohar, S.
+% Goldberg, "Eclipse Attacks on Bitcoin's Peer-to-Peer Network", USENIX Sec'15
+
+\section{Security analysis of blockchain systems}
+
+Many previous studies have investigated the security of blockchain
+systems~\cite{\bcPapers}. Most of them focused on analyzing the two blockchain
+systems; \btc and \eth.
+%Here, we introduce a few of them.
+%
+There is a large body of work on \btc attacks. Researchers have analyzed 
+double spending~\cite{karame2012double}, network-related attacks~
+\cite{heilman2015eclipse, apostolaki2017hijacking}, illicit transactions~
+\cite{son2019ndss}, transaction malleability~\cite{decker2014bitcoin,
+andrychowicz2015malleability}, and selfish mining~\cite{\miningpoolPapers}.
+%
+Eyal~\etal~\cite{eyal2018majority} introduced a selfish mining problem in
+which rational \btc miners collude to control the entire \btc system, including 
+taking over the mining profit.
+%
+Heilman~\etal~\cite{heilman2015eclipse} demonstrated the eclipse attack on the 
+\btc network where  an adversary can fabricate \btc mining power by spoofing the 
+routing tables of other miners. They utilized this to conduct double spending attacks as well.
+%
+Kwon~\etal~\cite{kwon2017selfish} proposed the fork-after-withholding attack,
+in which selfish miners secretly keep new blocks as long as possible to maximize
+their profit.
+
+Previous research has also investigated the security of \eth smart contracts~
+\cite{\smartcontractAll}.
+%
+Luu~\etal~\cite{luu2016making} introduced an automatic bug finding tool for \eth
+SCs. They aimed to discover bugs that allow colluding miners to intentionally 
+reorder the execution of SCs or to change the timestamp of SCs.
+%
+They also presented the notorious re-entrancy bug, which allows an adversary to
+continuously execute a target SC for various purposes.
+%
+Krupp~\etal~\cite{krupp2018teether} developed a tool that
+automatically generates exploits for identified SC vulnerabilities, and
+Kalra~\etal~\cite{kalra2018zeus} presented another tool that automatically
+remediates a target \SC by inserting security checks.
+%
+%There have been other open-source tools~\cite{\smartcontractTools} as well.
+
+Recently, researchers have started analyzing the security of other blockchain
+systems, such as Ripple~\cite{rippleattack},
+Monero~\cite{hinteregger2018empirical, moser2018empirical}, and
+Stellar~\cite{kim2019is}. In addition, there have been studies on evaluating
+various consensus algorithms~\cite{zhang2019lay}, and analyzing the decentrality
+in permissionless blockchains~\cite{kwon2019impossibility}.
+
+In line with this research, we analyzed the \eos system an identified new security concerns that are rooted in the unique characteristics of \eos and also described their attack scenarios.
+%
+We are planning to develop an analysis platform for \eos SCs, following the
+previous papers~\cite{luu2016making, krupp2018teether}.
+
+
+\section{Security analysis of \eos}
+
+Even though there exist many studies on \btc and \eth, there have been only a few studies conducted on \eos. 
+%
+%In fact, we tried to find other academic papers on the security of \eos, but we were unable to find even one. Here, we introduce several bugs~\cite{\eosBugs} found in the industry.
+We only found several bugs~\cite{\eosBugs} reported from the industry.
+%
+These bugs can be categorized as software bugs in the core \eos system
+~\cite{\eosSoftwareBugs}, logical bugs in \eos SCs~\cite{\eosSCBugs}, and a
+design bug~\cite{\eosDesignBugs}.
+
+Chen~\etal~\cite{EOSARBITCODE} found an arbitrary code execution bug in \eos.
+This bug is essentially caused by an integer overflow bug when executing an SC
+that leads to out-of-bound buffer access.
+%As a result, an adversary could take over the control of the nodes.
+%
+There are bugs from mis-implementation of SCs as well~\cite{\eosSCBugs}. One
+example is that an adversary can exploit an SC that does not properly check the
+caller of the SC, allowing multiple \eos SCs to be executed
+subordinately~\cite{requireRecipient}.
+%
+The third category is a bug that stems from the \eos core design, allowing a
+large number of transactions to delay the block creation time~\cite{eosNodeDoS}.
+This appears to be similar to our \NODEDOS attack; however, they essentially
+differ in that the \NODEDOS attack pauses BPs by exploiting their transaction
+scheduling algorithm. Hence, it can effectively break the system down.
+
+In this paper, we documented four new threats and attacks. Even though some of
+them seem trivial,  their underlying causes are related to the \eos system
+design. We also addressed specific design concerns with the current \eos system
+and noted how fixing them would address potential threats to \eos.

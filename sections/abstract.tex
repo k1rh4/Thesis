@@ -1,0 +1,38 @@
+% ABSTRACT
+\begin{abstract}
+\EOS is a popular cryptocurrency, whose market cap is over seven billion USD.
+Its ecosystem operates in the \PLATFORM system, which is devised to speed up the
+slow transaction rate of previous blockchain technologies.
+%
+Whereas many previous studies have investigated the security issues of \btc and
+\eth, the security of \PLATFORM has thus far drawn little attention despite
+its popularity.
+%
+Even the studies that have addressed the security of EOS and its underlying
+blockchain system mostly focused on implementational bugs in the core of
+the \PLATFORM system or in smart contracts, rather than addressing the
+fundamental problems stemming from the \eos design.
+
+To address this void in the previous literature, we investigate the design
+architecture of \eos. Based on this investigation, we introduce four attacks
+whose root causes stem from the unique characteristics of \eos, including
+intentionally slowing down the block creation time---which can disrupt the
+essential functions of its blockchain and incapacitate the entire \eos system.
+%
+In addition, we find that an adversary can partially freeze the execution of
+a target smart contract or maliciously consume all the resources of a target
+user with crafted requests.
+%
+We report all the identified threats to the \eos foundation, one of which
+is confirmed to be fatal.
+%
+Finally, we discuss possible mitigations against the proposed attacks.
+
+\end{abstract} 
+
+% KEYWORD
+\begin{Engkeyword}
+	EOS, EOS.IO, Resource, Security, Vulnerabilities
+\end{Engkeyword}
+\newpage
+

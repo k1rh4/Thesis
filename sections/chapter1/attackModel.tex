@@ -1,0 +1,33 @@
+\chapter{Attack Model}
+
+We assume an \eos adversary who utilizes the same functionalities of the \eos
+system as \SCPs and their service users do.
+%
+That is, the adversary is able to implement and manage her own SCs, or to
+execute other SCs.
+%
+The adversary can also entice victims to send a transaction that triggers the
+execution of a crafted SC.
+%
+Furthermore, the adversary is capable of updating the crafted \SC anytime to
+leverage the misplaced trust of the victims who only examined the previous SC
+before the update.
+One goal of the adversary is to deplete available resources of \SCPs, such as
+\cpu, \net, or \ram, thus causing the denial of service (DoS) for these \SCPs.
+The adversary also aims to cause delays in block generation in BPs,
+because such delays significantly undermine the service availability of the \eos
+system.
+%
+Consider SCs for stock trading or banking services, which demand a short latency
+for task completion. In such services, any system delay can potentially
+lead to a significant financial loss as transactions that should be
+processed within a short time cannot be processed.
+%
+Furthermore, the adversary could also plunder the resources of the victims and
+demands a ransom.
+
+Note that our adversary model is similar to those used in the previous studies
+that exploit \SC bugs~\cite{\smartcontractPapers} in \eth or cause double 
+spending in \btc with spam transactions~\cite{blockproblem}, except that the 
+adversary is able to update the crafted \eos \SC.
+

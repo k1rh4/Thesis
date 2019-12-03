@@ -1,0 +1,16 @@
+\chapter{Discussion}
+
+
+So far we have described the attack scenarios from the \textit{Malicious-\SCP} and \textit{Malicious-\User} perspectives based on the attack model. 
+In this section, we introduce the limits of each attack. 
+The \NODEDOS described in \autoref{Agamotto-eyes} should generate lots of transactions in order for attackers to kill the \BP. Therefore, attackers should do lots of \EOSCPU staking in advance and run the risk of paying the cost for this attack. 
+However, this is a reasonable attack considering the fact that the total market value of \EOS is USD 3,469,678,463. 
+In the case of the \TESER in ~\autoref{label_teser} and the \SCPDOS in \autoref{SCPDOS}, many unspecified {\SC}s are their victims. That is, these attacks have a limitation that they cannot target {\SC}s that they want to attack. 
+With regard to the \TOCTOU presented in \autoref{label_toctou}, it is a necessary condition for the \textit{Malicious-\SCP} to have the \user’s eosio.code permission. 
+Strictly speaking, having such permission means that the \user already guaranteed the credibility of the \SCP’s all {\SC}s. 
+However, this contradicts anonymity that is one of the biggest features of \BLOCKCHAIN. 
+All {\user}s cannot guarantee the \SCP’s identity.
+
+As mentioned in \autoref{EOSCONTRACT}, {\user}s grant the eosio.code permission because they trust the \SCP not the \SC, thus even though if the \SCP changes the \SC in the middle, {\user}s keep the same permission. The \textit{Malicious-\SCP} fools {\user}s by taking advantage of this point and this is a reasonable enough attack. 
+We informed the \PLATFORM Foundation about each attack what we found. With regard to the \NODEDOS, the \PLATFORM Foundation took a quick action with the highest level of the vulnerability label as soon as we reported it to the Foundation. 
+Unfortunately, the \PLATFORM Foundation’s position on the \SCPDOS is that developers should be aware of this issue instead of the platform being structurally altered because this attack is classified as an \SC developer mistake.  With regard to the \TESER  and \SCPDOS, there is no response from the Foundation after reporting.

@@ -1,0 +1,37 @@
+
+
+
+\begin{table}[!t]
+    \caption{The amount of \cpu and \ram consumed in the \TESER attack}
+\label{tab:TeserResult}
+\centering
+\setlength\tabcolsep{0.1cm}
+
+%\begin{threeparttable}
+\begin{tabular}{@{}rcccccc@{}}
+\toprule
+
+\multirow{2}[5]{*}{\textbf{\begin{tabular}[c]{@{}c@{}} Attack \\ Count \end{tabular}}}&
+&
+\multicolumn{2}{c}{\textbf{Attacker}} &
+&
+\multicolumn{2}{c}{\textbf{Victim \SCP}} \\
+\cmidrule{3-4}
+\cmidrule{6-7}
+&
+&
+\begin{tabular}[c]{@{}c@{}}\net \\ (KiB)\end{tabular} &
+\begin{tabular}[c]{@{}c@{}}\cpu \\ (ms)\end{tabular} &
+&
+\begin{tabular}[c]{@{}c@{}}\net \\ (KiB)\end{tabular} &
+\begin{tabular}[c]{@{}c@{}}\cpu \\ (ms)\end{tabular} \\ \midrule
+1   & & 0.137 & 0.146 & & 3.562 & 0.400 \\
+10  & & 1.329 & 1.485 & & 3.555 & 4.336 \\
+20  & & 2.655 & 2.938 & & 3.549 & 8.352 \\
+30  & & 3.980 & 4.474 & & 3.544 & 12.53 \\
+50  & & 6.626 & 7.422 & & 3.534 & 20.74 \\
+100 & & 13.21 & 15.23 & & 3.509 & 41.19 \\
+\bottomrule
+\end{tabular}
+
+\end{table}

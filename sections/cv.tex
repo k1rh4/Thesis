@@ -1,0 +1,65 @@
+\curriculumvitae[4]
+		% @environment personaldata 개인정보
+		% @command     name         이름
+		%              dateofbirth  생년월일
+		%              birthplace   출생지
+		%              domicile     본적지
+		%              address      주소지
+		%              email        E-mail 주소
+		% - 위 6개의 기본 필드 중에 이력서에 적고 싶은 정보를 입력
+		% input data only you want
+		\begin{personaldata}
+				\name       {이 상 섭}
+				\dateofbirth{1987}{07}{20}
+				\email    {k1rh4.lee@gmail.com}
+		 \end{personaldata}
+
+		% @environment education 학력
+		% @options [default: (none)] - 수학기간을 입력
+		\begin{education}
+				\item[2017. 9.\ --\ 2019. 2.] 한국과학기술원 (석사)
+				\item[2007. 2.\ --\ 2013. 8.] 홍익대학교 (학사)
+				\item[2004. 3.\ --\ 2007. 2.] 돌마고등학교
+				
+		\end{education}
+
+		% @environment career 경력
+		% @options [default: (none)] - 해당기간을 입력
+		\begin{career}
+				\item[2016. 3.\ --\ ~current] BoB(Best of Best) Mentor
+				\item[2014. 3.\ --\ ~current] 삼성 리서치 (Security LAB)
+				\item[2013. 3.\ --\ 2014. 2.] 삼성전자 (소프트웨어 멤버십 운영자) 
+				\item[2011. 8.\ --\ 2012. 2.] piosoft(linkhub) - startup
+				\item[2009. 3.\ --\ 2011. 4.] 공군 작전사령부 정보보호병
+		\end{career}
+
+		% @environment activity 학회활동
+		% @options [default: (none)] - 활동내용을 입력
+    \begin{activity}
+    			%\item[2019. 08] DEFCON CTF 27 Finalist ( KaishHack )
+    			%\item[2016. 2017.] 삼성전자 - SCTF 운영 및 문제 출제
+    			%\item[2016. 2017.] 벨루미나 CTF (invited)
+    			%\item[2013. ] KISA HDCON Finalist
+    			%\item[2013. ] WhiteHat contest Finalist
+    			%\item[2012. 3.] 홍익대학교 - 해킹방어대회 학과장상 수상 
+    			%\item[2012. 3.] 삼성전자 - 삼성 소프트웨어 멤버십 기술면접 만점상 수상
+    			%\item[2010. 3.] 공군배 - 해킹방어대회 최우수(참모총장상) 수상
+    	\item 2019.08. \textit{USENIX WOOT'19 Conference Speaker}		
+        \item 2019.08. \textit{DEFCON CTF 27 Finalist(KaishHack)}
+        \item 2016, 2017 \textit{SCTF 운영 및 문제 출제(Samsung Resurch \& KaisHack)}
+        \item 2016, 2017 \textit{벨루미나 CTF(invited)}
+        \item 2014.9. \textit{CodeEngine PSD hacking Speaker}
+        \item 2013.6. \textit{KISA HDCON Finalist}
+        \item 2013.6. \textit{WhiteHat contest Finalist}
+        \item 2012-2013. \textit{삼성소프트웨어 멤버십(대전)}
+        \item 2012.3. \textit{홍익대학교 해킹방어대회 학과장상 수상 }
+        \item 2012.3. \textit{삼성 소프트웨어 멤버십 기술면접 수상}
+        \item 2010.3. \textit{공군배 해킹방어대회 최우수(참모총장상) 수상}
+    \end{activity}
+%% 학회활동을 쓰고싶으시면, 이 문서와 클래스 문서의 학회활동 부분을 사용하십시오.
+
+		% @environment publication 연구업적
+		% @options [default: (none)] - 출판내용을 입력
+		\begin{publication}
+				\item Sangsup Lee, Daejun Kim, Dongkwan Kim, Sooel Son, and Yongdae Kim, KAIST \textit{Who Spent My EOS? On the (In)Security of Resource Management of EOS.IO}, Master Thesis, Conference on USENIX WOOT'19 2019.
+		\end{publication}

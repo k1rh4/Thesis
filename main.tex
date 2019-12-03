@@ -1,0 +1,310 @@
+% -*- TeX:UTF-8 -*-
+%%
+%% KAIST 학위논문양식 LaTeX용 (ver 0.4) 예시
+%%
+%% @version 0.4.1
+%% @author  채승병 Chae,Seungbyung (mailto:chess@kaist.ac.kr)
+%% @date    2004. 11. 12.
+%% @modifier 신호철 (mailto:h.c.shin@kaist.ac.kr)
+%% @moddate 2018. 11. 29
+%%
+%% @requirement
+%% teTeX, fpTeX, teTeX 등의 LaTeX2e 배포판
+%% + 은광희 님의 HLaTeX 0.991 이상 버젼 또는 홍석호 님의 HPACK 1.0
+%% : 설치에 대한 자세한 정보는 http://www.ktug.or.kr을 참조바랍니다.
+%%
+%% @note
+%% 기존에 널리 쓰여오던 차재춘 님의 학위논문양식 클래스 파일의 형식을
+%% 따르지 않고 전면적으로 다시 작성하였습니다. 논문 정보 입력부분에서
+%% 과거 양식과 다른 부분이 많으니 아래 예시에 맞춰 바꿔주십시오.
+%%
+%%
+%% @acknowledgement
+%% 본 예시 논문은 물리학과 박사과정 김용현 님의 호의로 제공되었습니다.
+%%
+%% -------------------------------------------------------------------
+%% @information
+%% 이 예제 파일은 hangul-ucs를 사용합니다. UTF-8 입력 인코딩으로
+%% 작성되었습니다. hlatex의 hfont는 이용하지 않습니다. --2006/02/11
+%% 본 템플릿은 전산학부 김민혁 교수에의해서 버그 수정되었습니다. -- 2016/11/25
+%% 전자과 신호철에 의해서 포맷 수정됨 (주로 draft 버전에서의 논문 표시양식)
+
+% @class kaist.cls
+% @options [default: doctor, korean, final]
+% - doctor: 박사과정 | master : 석사과정
+% - korean: 한글논문 | english: 영문논문
+% - final : 최종판   | draft  : 시험판
+% - pdfdoc : 선택하지 않으면 북마크와 colorlink를 만들지 않습니다.
+
+%indicator for the final version
+%N.B. Use \finaltrue for dissertation publication, and use \finalfalse for the proposal and defense
+\newif\iffinal
+\finaltrue %to set final marker as true -> final
+%\finalfalse %set final marker as false -> draft
+
+\iffinal
+	\documentclass[master,english,final,pdfdoc]{kaist-ucs-improved}
+	\usepackage{lmodern} %This suppresses font size warnings in final version
+\else
+	\documentclass[master,english,draft,pdfdoc]{kaist-ucs-improved}
+
+\fi
+
+
+\usepackage{array}
+\usepackage{numprint}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{threeparttable}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{shortcuts}
+%% \usepackage{listing}
+%% \usepackage{equation*}
+
+%\setcounter{secnumdepth}{1}
+
+%Enable numbering upto subsubsection
+%Increase the number to enable numbering for lower levels: e.g. \paragraph and \subparagraph
+\setcounter{secnumdepth}{3}
+
+%Line breaking for long URL's (line is broken also by '-')
+
+
+\def\UrlBreaks{\do\/\do-\do\_}
+
+% If you want make pdf document (include bookmark, colorlink)
+%\documentclass[doctor,english,final,pdfdoc]{kaist-ucs}
+
+% kaist.cls 에서는 기본으로 dhucs, ifpdf, graphicx 패키지가 로드됩니다.
+% 추가로 필요한 패키지가 있다면 주석을 풀고 적어넣으십시오,
+%\usepackage{...}
+
+% @command title 논문 제목(title of thesis)
+% @options [default: (none)]
+% - korean: 한글제목(korean title) | english: 영문제목(english title)
+\title[korean] {이오스 자원관리 시스템 취약점 분석}
+\title[english]{Who Spent My EOS? On the (In)Security of Resource Management of EOS.IO}
+
+% @note 표지에 출력되는 제목을 강제로 줄바꿈하려면 \linebreak 을 삽입.
+%       \\ 나 \newline 등을 사용하면 안됩니다. (아래는 예시)
+%
+%\title[korean]{탄소 나노튜브의 물리적 특성에 대한\linebreak 이론 연구}
+%\title[english]{Theoretical study on physical properties of\linebreak
+%                carbon nanotubes}
+%
+% If you want to begin a new line in cover, use \linebreak .
+% See examples above.
+%
+
+
+% @command author 저자 이름
+% @param   family_name, given_name 성, 이름을 구분해서 입력
+% @options [default: (none)]
+% - korean: 한글이름 | chinese: 한문이름 | english: 영문이름
+% 한문 이름이 없다면 빈 칸으로 두셔도 됩니다.
+%
+%
+% If you are a foreigner , write your name in korean or your korean name.
+% If you can't write native character, you can make the chinese blank empty 
+% Write as follow
+% \author[korean]{family name in korean}{given name in korean}
+% \author[chinese]{family name in your native language}{given name in your native language}
+% \author[english]{family name in english}{given name in english}
+%
+\author[korean]{이}{상 섭}
+\author[korean2]{이}{상섭}    %이름을 붙여 써 주시기 바랍니다.
+\author[chinese]{}{} %Don't want hanja
+\author[english]{Lee}{Sangsup}
+
+% @command advisor 지도교수 이름 (복수가능)
+% @usage   \advisor[options]{...한글이름...}{...영문이름...}{signed|nosign}
+% @options [default: major]
+% - major: 주 지도교수  | coopr: 공동 지도교수
+\advisor[major]{김용대}{Yong-Dae Kim}{signed}
+\advisor[major2]{김용대}{Yong-Dae Kim}{signed} %한글 성과 한글 이름을 모두 붙여 써 주시기 바랍니다.
+\advisor[coopr]{손수엘}{Soo-el Son}{}
+\advisor[coopr2]{손수엘}{Soo-el Son}{} 
+\advisorinfo{Graduate school of information security} %제출승인서에 들어가는 교수님 정보, advisor's information  
+
+%For final draft
+%\advisor[coopr]{홍 길 동}{Gil-Dong Hong}{nosign}
+%\advisor[coopr2]{홍길동}{Gil-Dong Hong}{nosign}    %한글 성과 한글 이름을 모두 붙여 써 주시기 바랍니다.
+%
+% 지도교수 한글이름은 입력하지 않아도 됩니다.
+% You may not input advisor's korean name
+% like this \advisor[major]{}{Chang, Kee Joo}{signed}
+
+
+% @command department {학과이름}{학위종류} - 아래 규칙에 따라 코드를 입력
+% @command department {department code}{degree field}
+%
+% department code
+% 2. 석박사학위논문 작성 및 제출요령 4쪽 ~ 5쪽 참고
+% 또는 kaist-ucs.cls 의 % @command department 참고
+
+% science: 이학 | engineering: 공학 | business : 경영학
+% 박사논문의 경우는 학위종류를 입력하지 않아도 됩니다.
+% If you write Ph.D. dissertation, you cannot input degree field.
+% The third parameter : a | b | c
+% a: 소속된 학과만 쓰는 옵션 (학과에만 소속되어 있는 경우에는 무조건 a를 선택해야 함)
+% b: 학과 아래의, 프로그램이나 학제전공에 소속되어 있을 경우에 학과와 프로그램을 함께 쓰는 옵션
+% c: 학과 아래의, 프로그램이나 학제전공에 소속되어 있을 경우에 학과를 쓰지 않고 프로그램이나 학제전공의 이름만 쓰는 옵션 
+% 
+% a: it represents only the name of department. (if you aren't in the program under the department, must choose a)
+% b: it represents the names of department and the program that is under the department (consider this when you are in the program not only department)
+% c: it represents only the name of program that is under the department (consider this when you are in the program not only department)
+
+\department{CS}{engineering}{Information Security}
+
+% @command studentid 학번(ID)
+\studentid{20173410}
+
+% @command referee 심사위원 (석사과정 3인, 박사과정 5인)
+\referee[1]{김 용대}
+\referee[2]{류 석영}
+\referee[3]{손 수엘}
+%\referee[4]{정}
+%\referee[5]{무}
+% \referee[5] {Barack Obama}
+% Of course english name is available
+
+% @command approvaldate 지도교수논문승인일
+% @param   year,month,day 연,월,일 순으로 입력
+\approvaldate{2019}{12}{17} %SHOULD BE MODIFIED 
+%\fontsize{17.28pt}{17.28pt}\selectfont %Font size changed from 18pt to 17.28pt to remove warnings
+
+% @command refereedate 심사위원논문심사일
+% @param   year,month,day 연,월,일 순으로 입력
+\refereedate{2019}{12}{17} %SHOULD BE MODIFIED
+
+% @command gradyear 졸업년도
+\gradyear{2020} %SHOULD BE MODIFIED
+
+
+
+% 본문 시작
+\begin{document} 
+
+    % 앞표지, 속표지, 학위논문 제출승인서, 학위논문 심사완료 검인서는
+    % 클래스 옵션을 final로 지정해주면 자동으로 생성되며,
+    % 반대로 옵션을 draft로 지정해주면 생성되지 않습니다.
+    % 학위논문 제출 승인서에서 자신의 전공과 교수님의 정보를 바꾸기 위해서는 첨부되어있는 제목이 kaist-ucs인 class 문서에 들어가서 ####################로 표시  
+    % 한 부분을 바꾸시길 바랍니다.
+
+    % 논문 서지, 초록, 핵심 낱말, 영문 초록, 영어 핵심 낱말 (Information of thesis, abstract in korean, keywords in korean, abstract in english, keywords in english)
+    %% 한글 초록은 500자를, 영문 초록은 300 낱말을 넘지 않아야 함
+    %% 핵심 낱말은 5 개 이내로 넣음
+    %% 한글 초록에 영문 글자를 쓰지 않도록 한다.
+		\thesisinfo
+   
+    %\begin{summary}      
+    %지난 10여 년간 탄소 나노튜브는 자체의 독특한 전기적, 기계적 성질로
+    %인하여 다가오는 나노기술 분야의 이상적인 기초물질중의 하나로 떠오르고
+    %있다. 흑연을 감는 세세한 방법에 따라 전기적 특성이 금속성에서 1eV의
+    %띠간격을 가지는 반도체 특성까지 다양한 분포로 존재한다.
+    %본 학위논문에서는 탄소 나노튜브의 여러 물리적 성질에 대해 고찰하는데,
+    %기본적으로 제일원리 밀도함수 이론과 밀접결합근사 모형을 사용하여 전기적
+    %특성과 그 제어 방법, 자기적 특성, 그리고 수송특성 등을 다루고자 한다.
+    %\end{summary}
+   
+    %\begin{Korkeyword}
+    % 가, 나, 다
+    %\end{Korkeyword}
+
+		%Locate abstract in a separate file
+		\input{sections/abstract}
+		\input{sections/abstract_kor}
+
+    \addtocounter{pagemarker}{1}                 % 백색별지분을 고려
+    \newpage  
+  
+		\iffinal
+			% 목차 (Table of Contents) 생성
+			\tableofcontents
+
+			% 표목차 (List of Tables) 생성
+			\listoftables
+
+			% 그림목차 (List of Figures) 생성
+			\listoffigures
+		\else
+			\label{paperlastromanpagelabel} %For removing warning in draft mode
+			\pagenumbering{arabic} % Draft mode has no pagenumbering so add it.
+		\fi
+
+    % 위의 세 종류의 목차는 한꺼번에 다음 명령으로 생성할 수도 있습니다.
+    %\makecontents
+%% 한글로 쓴 논문에는 본문에 영문 글자를 쓰지 않는다. 다만, 꼭 필요할 때에는 ‘한글 낱말 (영문 낱말)’ 꼴로 적는다.
+%% 이하의 본문은 LaTeX 표준 클래스 report 양식에 준하여 작성하시면 됩니다.
+%% 하지만 part는 사용하지 못하도록 제거하였으므로, chapter가 문서 내의
+%% 최상위 분류 단위가 됩니다.
+%% You cannot use 'part'
+
+		%Chapters in separate files
+		\input{sections/introduction}
+		\input{sections/chapter1/background}
+		\input{sections/chapter1/attackModel}
+		\input{sections/chapter1/attack}
+		\input{sections/chapter1/defense}
+		\input{sections/chapter1/scalarable}
+		\input{sections/chapter1/RelatedWork}
+		\input{sections/conclusion}
+
+
+%%
+%% 참고문헌 시작
+%% bibliography
+%% 위는 보기이므로 학과 또는 논문의 특성에 맞게 조정 가능함. 다만, 참고문헌마다 충분한 정보가 들어 있어야 한다.
+
+%Bibliography
+%%\bibliographystyle{splncs03}
+%%\bibliography{references/refGeneral,references/reference2} %Separate multiple *.bib files with commas
+
+{\footnotesize
+	\bibliographystyle{splncs03}
+	\bibliography{references/refGeneral,references/reference2} %Separate multiple *.bib files with commas
+}
+
+%%
+%% 사사 시작
+%% Acknowledgement
+%% 사사 작성은 선택사항임
+% @command acknowledgement 감사의글
+% @options [1 | 2 | 3 |4 ]
+% - 1 : 본문과 감사의 글이 둘 다 한글일 때  | 2 : 본문은 한글인데 감사의 글이 영어일 때 | 3 :  본문과 감사의 글이 둘 다 영어일 때  | 4 : 본문은 영어인데 감사의 글이 % 한글일 때 
+
+\iffinal
+	\acknowledgment[4]
+	가장 먼저 학술연수 파견이라는 좋은 기회로 저를 KAIST로 보내주신 삼성 리서치의 황용호 랩장님께 감사를 드리고 싶습니다. 부하 직원을 발전 시키는 상사가 좋은 상사라는 말씀을 해주시며 이상섭이라는 한 사원에게 2년이라는 긴 시간을 투자해 주신 것은 단순히 존경스러운 상사를 넘어 인생의 멘토로 평생 가슴에 품고 살것 같습니다. 
+	더불어 저를 선택해 주시고, 학교를 들어오기 전 부터 많은 조언을 주셨던 김용대 교수님께 특별히 감사의 말씀을 드리고 싶습니다. 
+	
+	둘째로 늘 창의적인 아이디어가 번뜩이는 해킹-크리에이터 (김)대준이, 논문 Writing이란 이런 것이다를 보여준 동관이, writing더불어 석사 생활의 tiping point를 만들어주신 손수엘 교수님께 무엇보다 감사의 말씀을 전합니다. 이 분들이 없었다면 너무나 많은 것을 놓치고 졸업을 했을 것 같습니다. 
+
+	셋째로 Sysec SA팀에게 감사의 인사를 드립니다. 분야무관, 모든 과제를 케어하는 정신적 지주 동관이 부터, 늘 뛰어난 판단력과 이성적인 조언을 많이 해준 동환이, fact advisor 민근이, 모든 기술들에 대한 답을 가지고 있던 갓 해커 은수, 2년을 함께 지내며 허당인 내가 놓치는 부분을 잘 항상 챙겨 주었던 현기, 곧 회사 메신져에서 볼 요한이, 보안 모든 분야를 팔로우하는 general hacker 창훈이, 주 분야가 아닌 새로운 분야도 모든 빨리 배우고 익숙해지는 브레인 묘준이. 이들 모두 덕에 재미있고 의미 있는 2년을 보내고 졸업하게 되었습니다. 
+	그 외에도 타팀이자, 나이 많은 형인데도 외면해 주지 않고 케어 해준 상욱이, 지호, 도현이, 철준이, 민철이, 호준이, 수빈이, 민정이, (권)유진이 그리고 적진 않았지만 그 외 Syssec 친구들 너무너무 고맙습니다.
+	그리고 정말 좋은 추억을 만들어준 엄청난 실력+인성까지 반듯한 갓 해커들이 집합: Kaishack 멤버들 에게도 너무나 고마움을 표하고 싶습니다.
+	더불어 1학년 1학기 때 같은 조별 과제로 뭉쳤다가 베스트 프랜드가 된 엘리트들 (오)동현이, 박선녀, 김홍식이! 2년 동안 마음의 안식처 같은 카톡방을 꼽으라면 단연 이친구들의 카톡방이였고 덕분에 재미있는 석사 생활을 보낼 수 있었습니다.
+
+	마지막으로 정신적 고민의 순간에 늘 정신적 지주가 되어주신 어머니, 아버지, 그리고 힘들 때는 응원해주고 어려울때는 안식처가 되어주며 늘 옆에서 지켜준 은이에게 무한한 감사의 말씀을 전하고 싶습니다.
+
+	
+	석사생활 동안 제가 가진 것보다 많은 것을 해낼 수 있었던 것은 이렇게 주변의 좋은 친구들 덕이라고 생각하고 있습니다.
+	카이스트에서 만난 모든 분들에게 너무나 감사드립니다.
+\fi
+
+%%
+%% 약력 시작
+%% Curriculum Vitae
+%% 약력 작성은 선택사항임. 약력 내용도 알맞게 바꿀 수 있음
+% @command curriculumvitae 이력서
+% @options [1 | 2 | 3 |4 ]
+% - 1 : 본문과 약력이 둘 다 한글일 때  | 2 : 본문은 한글인데 약력이 영어일 때 | 3 :  본문과 약력이 둘 다 영어일 때  | 4 : 본문은 영어인데 약력이 한글일 때 
+
+\iffinal
+	\input{sections/cv}
+\fi
+
+  \label{paperlastpagelabel}     % <-- 추가 부분: 마지막 페이지 위치 지정	
+%% 본문 끝
+\end{document}

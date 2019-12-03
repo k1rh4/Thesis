@@ -1,0 +1,222 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+
+\bibitem{wasmdec}
+Web assembly decompiler open-source (2018),
+  \url{https://github.com/wwwg/wasmdec/}
+
+\bibitem{andrychowicz2015malleability}
+Andrychowicz, M., Dziembowski, S., Malinowski, D., Mazurek, {\L}.: On the
+  malleability of bitcoin transactions. In: International Conference on
+  Financial Cryptography and Data Security. pp. 1--18. Springer (2015)
+
+\bibitem{apostolaki2017hijacking}
+Apostolaki, M., Zohar, A., Vanbever, L.: Hijacking bitcoin: Routing attacks on
+  cryptocurrencies. In: 2017 IEEE Symposium on Security and Privacy (SP 2017).
+  pp. 375--392. IEEE (2017)
+
+\bibitem{EOSEOSIOCODE}
+arhag: eosio.code permission argument.
+  \url{https://github.com/EOSIO/eos/issues/3050} (2018)
+
+\bibitem{eosFakeCoin}
+Barkley, A.: 1 billion fake eos tokens used to steal \$58k from decentralised
+  exchange.
+  \url{https://cryptodaily.co.uk/2018/09/1-billion-fake-eos-tokens-used-to-steal-58k-from-decentralised-exchange}
+  (2018)
+
+\bibitem{bastien2015webassembly}
+Bastien, J., Gohman, D.: {W}eb{A}ssembly: {H}ere {B}e {D}ragons.
+  \url{https://llvm.org/devmtg/2015-10/slides/BastienGohman-WebAssembly-HereBeDragons.pdf}
+  (2015)
+
+\bibitem{coincap}
+Top 100 cryptocurrencies by market capitalization.
+  \url{https://coinmarketcap.com/} (2019)
+
+\bibitem{etc}
+classic community, E.: {Ethereum Classic Documentation}. Self-published  (2016)
+
+\bibitem{dappradar}
+{EOS D}apps {R}ankings. \url{https://dappradar.com/rankings/protocol/eos}
+  (2019)
+
+\bibitem{decker2014bitcoin}
+Decker, C., Wattenhofer, R.: Bitcoin transaction malleability and mtgox. In:
+  European Symposium on Research in Computer Security. pp. 313--326. Springer
+  (2014)
+
+\bibitem{EOSWHITEPAPER}
+{{EOS.IO Technical White Paper}}.
+  \url{https://github.com/EOSIO/Documentation/blob/master/TechnicalWhitePaper.md}
+  (2018)
+
+\bibitem{eospark}
+{EOS} {P}ark - {EOS} data service provider. \url{https://eospark.com/}
+
+\bibitem{eyal2015miner}
+Eyal, I.: The {M}iner's {D}ilemma. In: 2015 IEEE Symposium on Security and
+  Privacy (SP 2015). IEEE (2015)
+
+\bibitem{eyal2018majority}
+Eyal, I., Sirer, E.G.: Majority is not enough: Bitcoin mining is vulnerable.
+  Communications of the ACM  61(7),  95--102 (2018)
+
+\bibitem{heilman2015eclipse}
+Heilman, E., Kendler, A., Zohar, A., Goldberg, S.: Eclipse attacks on
+  bitcoin’s peer-to-peer network. In: 24th {USENIX} Security Symposium
+  ({USENIX} Security 15). pp. 129--144 (2015)
+
+\bibitem{hinteregger2018empirical}
+Hinteregger, A., Haslhofer, B.: An empirical analysis of monero cross-chain
+  traceability. arXiv preprint arXiv:1812.02808  (2018)
+
+\bibitem{howard2006security}
+Howard, M., Lipner, S.: The security development lifecycle, vol.~8. Microsoft
+  Press Redmond (2006)
+
+\bibitem{taintAnalysis}
+J~Newsome, D.S.: Dynamic taint analysis for automatic detection, analysis, and
+  signaturegeneration of exploits on commodity software (2005),
+  \url{http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.307.8389&rep=rep1&type=pdf/}
+
+\bibitem{eosContractSecurity}
+Jing, K.: {EOS} smart contract development security best practices.
+  \url{https://github.com/slowmist/eos-smart-contract-security-best-practices/blob/master/README_EN.md}
+  (2018)
+
+\bibitem{kalra2018zeus}
+Kalra, S., Goel, S., Dhawan, M., Sharma, S.: Zeus: Analyzing safety of smart
+  contracts. In: 25th Annual Network and Distributed System Security Symposium,
+  NDSS. pp. 18--21 (2018)
+
+\bibitem{karame2012double}
+Karame, G.O., Androulaki, E., Capkun, S.: Double-spending fast payments in
+  bitcoin. In: Proceedings of the 2012 ACM conference on Computer and
+  communications security. pp. 906--917. ACM (2012)
+
+\bibitem{kim2019is}
+Kim, M., Kwon, Y., Kim, Y.: {Is Stellar As Secure As You Think?} IEEE Security
+  and Privacy on the Blockchain (IEEE S\&B 2019)  (2019)
+
+\bibitem{Symbolic_execution}
+King, J.C.: Symbolic execution and program testing (1997),
+  \url{https://yurichev.com/mirrors/king76symbolicexecution.pdf}
+
+\bibitem{krupp2018teether}
+Krupp, J., Rossow, C.: teether: {G}nawing at ethereum to automatically exploit
+  smart contracts. In: 27th {USENIX} Security Symposium ({USENIX} Security 18).
+  pp. 1317--1333 (2018)
+
+\bibitem{kwon2017selfish}
+Kwon, Y., Kim, D., Son, Y., Vasserman, E., Kim, Y.: {Be Selfish and Avoid
+  Dilemmas: Fork After Withholding (FAW) Attacks on Bitcoin}. In: Proceedings
+  of the 2017 ACM SIGSAC Conference on Computer and Communications Security.
+  ACM (2017)
+
+\bibitem{kwon2019impossibility}
+Kwon, Y., Liu, J., Kim, M., Song, D., Kim, Y.: Impossibility of full
+  decentralization in permissionless blockchains. arXiv preprint
+  arXiv:1905.05158  (2019)
+
+\bibitem{larimer2014delegated}
+Larimer, D.: Delegated proof-of-stake (dpos). Bitshare whitepaper  (2014)
+
+\bibitem{requireRecipient}
+Le, Q.: How hackers attack eos contracts and ways to prevent it.
+  \url{https://medium.com/leclevietnam/hacking-in-eos-contracts-and-how-to-prevent-it-b8663c8bffa6}
+  (2018)
+
+\bibitem{son2019ndss}
+Lee, S., Yoon, C., Kang, H., Kim, Y., Kim, Y., Han, D., Son, S., Shin, S.:
+  Cybercriminal minds: An investigative study of cryptocurrency abuses in the
+  dark web. In: 26th Annual Network and Distributed System Security Symposium,
+  NDSS (2019)
+
+\bibitem{litecoin}
+{Litecoin}. \url{https://litecoin.org/} (2018)
+
+\bibitem{luu2016making}
+Luu, L., Chu, D.H., Olickel, H., Saxena, P., Hobor, A.: Making smart contracts
+  smarter. In: Proceedings of the 2016 ACM SIGSAC conference on computer and
+  communications security. pp. 254--269. ACM (2016)
+
+\bibitem{mcclure2009hacking}
+McClure, S., Scambray, J., Kurtz, G., Kurtz: Hacking exposed: network security
+  secrets and solutions. McGraw-Hill (2009)
+
+\bibitem{monero}
+{Monero}. \url{https://monero.org/} (2018)
+
+\bibitem{moser2018empirical}
+M{\"o}ser, M., Soska, K., Heilman, E., Lee, K., Heffan, H., Srivastava, S.,
+  Hogan, K., Hennessey, J., Miller, A., Narayanan, A., et~al.: An empirical
+  analysis of traceability in the monero blockchain. Proceedings on Privacy
+  Enhancing Technologies  2018(3),  143--163 (2018)
+
+\bibitem{nakamoto2008bitcoin}
+Nakamoto, S.: Bitcoin: A peer-to-peer electronic cash system (2008)
+
+\bibitem{rippleattack}
+Ogono, U.: Vulnerabilities in bitcoin, ripple, and ethereum digital signatures
+  discovered by researchers.
+  \url{https://smartereum.com/46548/cryptocurrency-digital-signatures-vulnerabilities-in-bitcoin-ripple-and-ethereum-digital-signatures-discovered-by-researchers-cryptocurrency-news-today/}
+  (2019)
+
+\bibitem{eosNodeDoS}
+PeckShield: Eos “transaction congestion attack”: Attackers could paralyze
+  eos network with minimal cost.
+  \url{https://medium.com/@peckshield/eos-transaction-congestion-attack-attackers-could-paralyze-eos-network-with-minimal-cost-9adfb4d16c82}
+  (2019)
+
+\bibitem{EOSARBITCODE}
+of~Qihoo~360, Y.C.: Eos arbitarary code execution.
+  \url{http://blogs.360.cn/post/eos-node-remote-code-execution-vulnerability.html}
+  (2018)
+
+\bibitem{recabarren2017hardening}
+Recabarren, R., Carbunar, B.: Hardening stratum, the bitcoin pool mining
+  protocol. Proceedings on Privacy Enhancing Technologies  2017(3),  57--74
+  (2017)
+
+\bibitem{blockproblem}
+research, B.: The bitcoin cash hardfork – three interrelated incidents
+  (2019),
+  \url{https://blog.bitmex.com/the-bitcoin-cash-hardfork-three-interrelated-incidents/}
+
+\bibitem{ripple}
+Schwartz, D., Youngs, N., Britto, A., et~al.: The ripple protocol consensus
+  algorithm. Ripple Labs Inc White Paper  5 (2014)
+
+\bibitem{resourcemaxusage}
+Set account permission.
+  \url{https://developers.eos.io/eosio-cleos/reference#cleos-set-account}
+  (2019)
+
+\bibitem{etherray}
+Suiche, M.: Porosity: A decompiler for blockchain-based smart contracts
+  bytecode. DEF CON  25, ~11 (2017)
+
+\bibitem{mythril}
+Team, C.: Mythril: Security analysis tool for ethereum smart contracts.
+  \url{https://github.com/ConsenSys/mythril} (2018)
+
+\bibitem{Manticore}
+Trailofbits: Manticore. \url{https://github.com/trailofbits/manticore} (2017)
+
+\bibitem{wood2014ethereum}
+Wood, G.: {Ethereum: A Secure Decentralized Generalized Transaction Ledger}.
+  Ethereum Project Yellow Paper  151 (2014)
+
+\bibitem{zhang2017publish}
+Zhang, R., Preneel, B.: Publish or perish: A backward-compatible defense
+  against selfish mining in bitcoin. In: Cryptographers’ Track at the RSA
+  Conference. pp. 277--292. Springer (2017)
+
+\bibitem{zhang2019lay}
+Zhang, R., Preneel, B.: Lay down the common metrics: Evaluating proof-of-work
+  consensus protocols’ security. In: 2019 IEEE Symposium on Security and
+  Privacy (SP 2019) (2019)
+
+\end{thebibliography}

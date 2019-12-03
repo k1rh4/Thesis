@@ -1,0 +1,97 @@
+
+\newcommand*{\bcPapers}{nakamoto2008bitcoin, wood2014ethereum, etc, EOSWHITEPAPER, ripple, litecoin, monero}
+\newcommand*{\miningpoolPapers}{recabarren2017hardening, kwon2017selfish, eyal2018majority, eyal2015miner, zhang2017publish}
+\newcommand*{\concensusPapers}{karame2012double}
+\newcommand*{\smartcontractAll}{luu2016making, krupp2018teether, kalra2018zeus, mythril, Manticore, etherray}
+\newcommand*{\eosBugs}{EOSARBITCODE, eosContractSecurity, requireRecipient, eosFakeCoin, eosNodeDoS}
+\newcommand*{\smartcontractPapers}{luu2016making, krupp2018teether, kalra2018zeus}
+\newcommand*{\smartcontractTools}{mythril, Manticore, etherray}
+\newcommand*{\eosDesignBugs}{EOSARBITCODE}
+\newcommand*{\eosSCBugs}{eosContractSecurity, requireRecipient, eosFakeCoin}
+\newcommand*{\eosSoftwareBugs}{EOSARBITCODE}
+
+\newcommand*{\ETAL}{\textit{et~al.}\,}%
+\newcommand*{\sys}{\textsc{EoS}\,}%
+
+\newcommand*{\ETHER}{Ethereum\,}% Ethereum 쓰이는 돈, 화폐 (코인) 개념.
+\newcommand*{\PLATFORM}{EOS.IO\,}% EOS 생태계 또는 플랫폼을 지칭
+\newcommand*{\EOS}{EOS\,}% EOS 쓰이는 돈, 화폐 (코인) 개념.
+\newcommand*{\btc}{Bitcoin\,}% Bitcoin
+\newcommand*{\eth}{Ethereum\,}% Ethereum
+\newcommand*{\eos}{EOS.IO\,}% EOS 생태계 또는 플랫폼을 지칭
+\newcommand*{\cpu}{\textsc{eos-cpu}\,}
+\newcommand*{\ram}{\textsc{eos-ram}\,}
+\newcommand*{\net}{\textsc{eos-net}\,}
+\newcommand*{\code}{\texttt{eosio.code}\,}
+
+
+\newcommand*{\BP}{BP\,}
+\newcommand*{\BPs}{BPs\,}
+
+\newcommand*{\SC}{SC\,}
+\newcommand*{\SCs}{SCs\,}
+
+\newcommand*{\SCP}{SCP\,}
+\newcommand*{\SCPs}{SCPs\,}
+
+\newcommand*{\user}{user\,}
+\newcommand*{\users}{users\,}
+\newcommand*{\User}{User\,} % Smart contrct developer, client를 아우르는 말
+
+\newcommand*{\NODEDOS}{block delay\,}
+\newcommand*{\TESER}{SCP CPU-drain\,}
+\newcommand*{\SCPDOS}{SCP RAM-drain\,}
+\newcommand*{\TOCTOU}{RAMsomware\,}
+
+% Color
+\hypersetup{
+  colorlinks,
+  linkcolor={blue!50!black},
+  citecolor={blue!50!black},
+  urlcolor={blue!50!black},
+  filecolor={blue!50!black},
+}
+% ==== Teser Attack
+% Attacker: Malclious User
+% Victim: SCP
+
+% ==== NodeDos
+% Attacker: Malicious User (가 올린 smart contract)
+% Victim: Block producer
+
+% ==== Ramsomware
+% Attacker: Malicious SCP
+% Victim: User
+
+% ==== CREAT
+% Attacker: Malicious User
+% Victim: SCP
+% =======
+%\FXRegisterAuthor{sooel}{asooel}{\color{red}sooel}%
+%\FXRegisterAuthor{reset}{areset}{\color{magenta}reset}%
+%\FXRegisterAuthor{kirha}{akirha}{\color{blue}kirha}%
+\newcommand{\DK}[1]{\textcolor{cyan}{DK: #1}}
+\newcommand{\XX}[1]{\textcolor{red}{#1}}
+
+
+\usepackage{xstring}
+\newcommand{\PP}[1]{
+  \vspace{2pt}
+  \noindent{\bf \IfEndWith{#1}{.}{#1}{#1.}}
+  \vspace{2pt}
+}
+
+\usepackage{expl3}
+\ExplSyntaxOn
+\cs_new_protected:Npn \tc #1
+{
+  \tl_set:Nn \l_tmpa_tl {#1}
+  \regex_replace_all:nnN { . } { \c{string} \0 } \l_tmpa_tl
+  \tl_set:Nx \l_tmpb_tl { \l_tmpa_tl }
+  % now \l_tmpb_tl contains what you want:
+  %\tl_show:N \l_tmpb_tl
+  \textit{\l_tmpb_tl}
+}
+\ExplSyntaxOff
+
+\newcommand{\etal}{\textit{et al}.\,}

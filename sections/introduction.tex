@@ -1,0 +1,115 @@
+\chapter{Introduction} %Don't want chapter number for intro
+
+Recently, \textit{cryptocurrency} has attracted a great deal of attention due
+to its rapidly growing market cap. Bitcoin, often called the first
+cryptocurrency, reached a market cap of over 100 billion USD in 2019, and more
+than 2K cryptocurrencies have emerged worldwide, thus representing a combined
+value of over 200 billion USD~\cite{coincap}. This surging interest in the
+cryptocurrency has also attracted the attention of both industry and
+academia for its underlying \textit{blockchain} system. Consequently, many
+studies have been conducted to analyze and improve the core technology of each
+blockchain system~\cite{\bcPapers}.
+
+The security of the blockchain is another important issue for which vast
+research has been conducted. These studies focused on analyzing double
+spending~\cite{karame2012double}, network-related
+attacks~\cite{heilman2015eclipse, apostolaki2017hijacking},
+illicit transactions~\cite{son2019ndss}, transaction
+malleability~\cite{decker2014bitcoin, andrychowicz2015malleability}, selfish
+mining~\cite{\miningpoolPapers}, or smart contracts~\cite{\smartcontractAll}.
+However, most of these studies have only focused on the two major
+cryptocurrencies; \btc and \eth.
+
+\eos is an emerging blockchain system, whose cryptocurrency, \EOS, possesses a
+market cap of over seven billion USD~\cite{coincap}, making it one of the top
+five cryptocurrencies worldwide.~\footnote{
+We checked this at the time of the submission.}
+%
+There have been only a few studies on its security~\cite{\eosBugs}.
+%
+The \eos foundation has been incentivizing researchers through a bug bounty
+program, but most of the bugs found so far are related to implementation, such
+as software vulnerabilities that an adversary can exploit to perform
+arbitrary code execution~\cite{\eosSoftwareBugs}, or logical bugs that cause a
+smart contract to deviate from the objectives of its developers
+~\cite{\eosSCBugs}. However, as the design of \eos is markedly different from
+that of \btc or \eth in managing system resources, there may exist distinctive
+and unexplored threats that stem from the resource management policies of the \eos
+system.
+
+To address the lack of research in this area, we chose \eos as the objective of
+this study and analyzed its security.
+%
+We first studied the characteristics of the \eos system. Note that some parts
+of the \eos whitepaper~\cite{EOSWHITEPAPER} are outdated or ambiguous; hence,
+we had to manually analyze the source code to figure out its actual implemented
+semantics.
+
+To speed up the slow transaction rate of previous blockchain systems, \eos
+adopted a \textit{Delegated Proof of Stake (DPoS)} algorithm~\cite{
+larimer2014delegated}, which delegates the consensus on blocks and execution of
+the smart contracts to the representative nodes, called Block Producers (\BPs).
+%\kirhanote{EOS가 DPoS를 대표하는 코인이라는 말을 추가하면 어떨까요?}
+This design decision of using DPoS entails problems of sharing computational
+resources among a small number of \BPs. To effectively manage resources and
+prevent resource abuse, \eos asks a participant to obtain a resource capacity,
+such as computational power, network bandwidth, and storage~\cite{
+EOSWHITEPAPER}.
+%
+Even though this new means of resource management can effectively support the
+representative nodes in executing smart contracts, it raises new concerns about
+added assets that can negatively impact the security of the
+system~\cite{howard2006security}.
+
+
+% Important of resource managements.
+Any attack on resource managements that leads to a denial of service (DoS) is a
+critical security threat. Many emerging blockchain systems strive to achieve 
+high Transactions-Per-Second (TPS) rate, which enables the provision of a
+short-latency service for their users and service providers. Incessant attacks
+that successfully undermine the availability or TPS of blockchain services break
+fundamental requirements that blockchain service users expect. For instance,
+stock transaction services or payment services at retail stores demand a short
+latency to process financial transactions. Exacerbating transaction time
+directly affects the quality of these services, thus contributing to users
+choosing other blockchain services.
+
+
+Therefore, we investigated resource-related threats that exploit the design
+architecture unique to \eos. We manifested the capabilities of smart contract
+providers (SCPs) as well as their service users and defined an \eos adversary
+who is able to conduct the same level of privileged operations as these
+participants do. Under this adversary model, we identified four possible attack
+scenarios: \NODEDOS, \TESER, \SCPDOS, and \TOCTOU attacks.
+%
+In these attacks, an adversary intentionally incapacitates the entire \eos system
+with a crafted smart contract, an adversary depletes or drains the resources of
+a smart contract provider so that this victim no longer provides the service,
+and a malicious smart contract provider surreptitiously replaces the original smart
+contract with another one to steal user assets.
+
+In order to address these attacks, we analyze their causes and propose several
+mitigations. These mitigations include simple preventative measures along with
+suggestions for systematic changes of \eos. We believe that the proposed
+mitigations can prevent the attacks described in this paper as well as potential
+future threats.
+
+In summary, our contributions are as follows:
+\begin{itemize}
+\item We present the \emph{block delay} attack, a novel attack that exploits
+    a transaction scheduling policy of the \eos system. This attack is able
+    to delay all transactions in the system, thus resulting in the DoS.
+\item We introduce two new attack methods: \emph{\TESER and \SCPDOS} attacks.
+    These attacks exploit resource management policies unique to the system,
+    thus disrupting services from a target smart contract provider.
+\item We present the \emph{\TOCTOU} attack scenario that abuses controversial
+    design decisions of the system. The attack allows locking \ram resources
+    of a target user, which enables an attacker to ask a ransom in exchange for
+    releasing the locked \ram resources.
+\item We demonstrate the feasibility of each attack and estimate the impact of
+    each proposed attack scenario based on experiments conducted in a local \eos
+    system.
+\item We propose preventative measures as well as a redesign of the \eos system
+    to mitigate the proposed and potential threats.
+\end{itemize}
+
