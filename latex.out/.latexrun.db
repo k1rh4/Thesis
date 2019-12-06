@@ -1,0 +1,117 @@
+{
+  "version": "latexrun-db-v2",
+  "tasks": {
+    "latex::p": {
+      "deps": [
+        [
+          "args",
+          [],
+          [
+            "pdflatex",
+            "-interaction",
+            "nonstopmode",
+            "-recorder",
+            "-output-directory",
+            "latex.out",
+            "p"
+          ]
+        ],
+        [
+          "env",
+          [
+            "TEXMFOUTPUT"
+          ],
+          null
+        ],
+        [
+          "env",
+          [
+            "TEXINPUTS"
+          ],
+          "sty:"
+        ],
+        [
+          "env",
+          [
+            "TEXFORMATS"
+          ],
+          null
+        ],
+        [
+          "env",
+          [
+            "TEXPOOL"
+          ],
+          null
+        ],
+        [
+          "env",
+          [
+            "TFMFONTS"
+          ],
+          null
+        ],
+        [
+          "env",
+          [
+            "PATH"
+          ],
+          "/Users/k1rh4/.jenv/shims:/usr/local/Cellar/llvm@4/4.0.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/Library/TeX/texbin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Wireshark.app/Contents/MacOS:/Users/k1rh4/GIT/emsdk:/Library/TeX/texbin/"
+        ],
+        [
+          "file",
+          [
+            "/usr/local/texlive/2018/texmf-var/web2c/pdftex/pdflatex.fmt"
+          ],
+          "f15ab2943622e7ab0b6c1aa630451ddb17df51b44f4e3df43488b761777077a1"
+        ],
+        [
+          "file",
+          [
+            "/usr/local/texlive/2018/texmf-dist/web2c/texmf.cnf"
+          ],
+          "46fb5c6a9dfaf7719bd8456832c128efbb0988e07509e749544e72c148de5ffb"
+        ],
+        [
+          "file",
+          [
+            "/usr/local/texlive/2018/texmf.cnf"
+          ],
+          "0fb3a07f84888b7a632e85e31ce0a26c629e98b1a1b8d85e90214c44e1c7aaf8"
+        ],
+        [
+          "unknown_input",
+          [],
+          1575442722.001463
+        ],
+        [
+          "file",
+          [
+            "latex.out/texput.log"
+          ],
+          "71e0ef1f92a7a695f6cb0999a8ce0d5b839c7f50e80780d08acd904ec6f3c37e"
+        ],
+        [
+          "file",
+          [
+            "latex.out/texput.fls"
+          ],
+          "dc2a15ab09e2796706b137a0797fc9a7b0dfff166163780812d48a145356d831"
+        ]
+      ],
+      "output_files": {
+        "latex.out/texput.log": "71e0ef1f92a7a695f6cb0999a8ce0d5b839c7f50e80780d08acd904ec6f3c37e",
+        "latex.out/texput.fls": "dc2a15ab09e2796706b137a0797fc9a7b0dfff166163780812d48a145356d831"
+      },
+      "extra": {
+        "jobname": "latex.out/texput",
+        "outname": null,
+        "status": 1
+      }
+    }
+  },
+  "clean": {
+    "latex.out/texput.log": "71e0ef1f92a7a695f6cb0999a8ce0d5b839c7f50e80780d08acd904ec6f3c37e",
+    "latex.out/texput.fls": "dc2a15ab09e2796706b137a0797fc9a7b0dfff166163780812d48a145356d831"
+  }
+}

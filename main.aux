@@ -129,24 +129,21 @@
 \citation{EOSEOSIOCODE}
 \@writefile{toc}{\contentsline {section}{\numberline {5.3}Fine-grained permission control}{16}{section.5.3}}
 \newlabel{ss:fine}{{5.3}{16}{Fine-grained permission control}{section.5.3}{}}
-\citation{wasmdec}
-\citation{taintAnalysis}
-\citation{Symbolic_execution}
 \@writefile{toc}{\contentsline {chapter}{\numberline {Chapter 6.}Scalability evaluation }{17}{chapter.6}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces E-SCV Architecture}}{17}{figure.6.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Crawling EOS Smart Contract}{18}{section.6.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Regulating binary format ABI to JSON format ABI}{18}{section.6.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}EOSRAY}{18}{section.6.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Crawling EOS Smart Contract}{17}{section.6.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Regulating binary format ABI to JSON format ABI}{17}{section.6.2}}
 \citation{krupp2018teether}
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}EOSRAY}{18}{section.6.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.4}Analyzer}{18}{section.6.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.5}CFG recovery}{18}{section.6.5}}
 \@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces Estimated insecure stmart contracts}}{19}{table.6.1}}
 \newlabel{escvTable}{{6.1}{19}{Estimated insecure stmart contracts}{table.6.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.4}Analyzer}{19}{section.6.4}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.5}CFG recovery}{19}{section.6.5}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.6}Reachability}{19}{section.6.6}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.7}Sensitive Functions}{19}{section.6.7}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.8}Limitation and Evaluation}{20}{section.6.8}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.6}Reachability Checker}{19}{section.6.6}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.7}Define Sensitive Functions}{19}{section.6.7}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.8}Limitation and Evaluation}{19}{section.6.8}}
 \citation{nakamoto2008bitcoin}
 \citation{wood2014ethereum}
 \citation{etc}
@@ -208,55 +205,52 @@
 \@writefile{toc}{\contentsline {section}{\numberline {7.2}Security analysis of EOS.IO\tmspace  +\thinmuskip {.1667em}}{21}{section.7.2}}
 \bibstyle{splncs03}
 \bibdata{references/refGeneral,references/reference2}
-\bibcite{wasmdec}{1}
-\bibcite{andrychowicz2015malleability}{2}
-\bibcite{apostolaki2017hijacking}{3}
-\bibcite{EOSEOSIOCODE}{4}
-\bibcite{eosFakeCoin}{5}
-\bibcite{bastien2015webassembly}{6}
-\bibcite{coincap}{7}
-\bibcite{etc}{8}
-\bibcite{dappradar}{9}
-\bibcite{decker2014bitcoin}{10}
-\bibcite{EOSWHITEPAPER}{11}
-\bibcite{eospark}{12}
-\bibcite{eyal2015miner}{13}
-\bibcite{eyal2018majority}{14}
-\bibcite{heilman2015eclipse}{15}
-\bibcite{hinteregger2018empirical}{16}
-\bibcite{howard2006security}{17}
-\bibcite{taintAnalysis}{18}
-\bibcite{eosContractSecurity}{19}
-\bibcite{kalra2018zeus}{20}
-\bibcite{karame2012double}{21}
-\bibcite{kim2019is}{22}
-\bibcite{Symbolic_execution}{23}
-\bibcite{krupp2018teether}{24}
-\bibcite{kwon2017selfish}{25}
-\bibcite{kwon2019impossibility}{26}
-\bibcite{larimer2014delegated}{27}
+\bibcite{andrychowicz2015malleability}{1}
+\bibcite{apostolaki2017hijacking}{2}
+\bibcite{EOSEOSIOCODE}{3}
+\bibcite{eosFakeCoin}{4}
+\bibcite{bastien2015webassembly}{5}
+\bibcite{coincap}{6}
+\bibcite{etc}{7}
+\bibcite{dappradar}{8}
+\bibcite{decker2014bitcoin}{9}
+\bibcite{EOSWHITEPAPER}{10}
+\bibcite{eospark}{11}
+\bibcite{eyal2015miner}{12}
+\bibcite{eyal2018majority}{13}
+\bibcite{heilman2015eclipse}{14}
+\bibcite{hinteregger2018empirical}{15}
+\bibcite{howard2006security}{16}
+\bibcite{eosContractSecurity}{17}
+\bibcite{kalra2018zeus}{18}
+\bibcite{karame2012double}{19}
+\bibcite{kim2019is}{20}
+\bibcite{krupp2018teether}{21}
+\bibcite{kwon2017selfish}{22}
+\bibcite{kwon2019impossibility}{23}
+\bibcite{larimer2014delegated}{24}
+\bibcite{requireRecipient}{25}
+\bibcite{son2019ndss}{26}
+\bibcite{litecoin}{27}
 \@writefile{toc}{\contentsline {chapter}{Bibliography }{24}{section*.5}}
-\bibcite{requireRecipient}{28}
-\bibcite{son2019ndss}{29}
-\bibcite{litecoin}{30}
-\bibcite{luu2016making}{31}
-\bibcite{mcclure2009hacking}{32}
-\bibcite{monero}{33}
-\bibcite{moser2018empirical}{34}
-\bibcite{nakamoto2008bitcoin}{35}
-\bibcite{rippleattack}{36}
-\bibcite{eosNodeDoS}{37}
-\bibcite{EOSARBITCODE}{38}
-\bibcite{recabarren2017hardening}{39}
-\bibcite{blockproblem}{40}
-\bibcite{ripple}{41}
-\bibcite{resourcemaxusage}{42}
-\bibcite{etherray}{43}
-\bibcite{mythril}{44}
-\bibcite{Manticore}{45}
-\bibcite{wood2014ethereum}{46}
-\bibcite{zhang2017publish}{47}
-\bibcite{zhang2019lay}{48}
+\bibcite{luu2016making}{28}
+\bibcite{mcclure2009hacking}{29}
+\bibcite{monero}{30}
+\bibcite{moser2018empirical}{31}
+\bibcite{nakamoto2008bitcoin}{32}
+\bibcite{rippleattack}{33}
+\bibcite{eosNodeDoS}{34}
+\bibcite{EOSARBITCODE}{35}
+\bibcite{recabarren2017hardening}{36}
+\bibcite{blockproblem}{37}
+\bibcite{ripple}{38}
+\bibcite{resourcemaxusage}{39}
+\bibcite{etherray}{40}
+\bibcite{mythril}{41}
+\bibcite{Manticore}{42}
+\bibcite{wood2014ethereum}{43}
+\bibcite{zhang2017publish}{44}
+\bibcite{zhang2019lay}{45}
 \@writefile{toc}{\contentsline {chapter}{Acknowledgments in Korean}{26}{section*.6}}
 \@writefile{toc}{\contentsline {chapter}{Curriculum Vitae in Korean}{27}{section*.7}}
 \newlabel{paperlastpagelabel}{{7.2}{27}{Curriculum Vitae in Korean}{Item.12}{}}

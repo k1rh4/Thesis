@@ -2,10 +2,6 @@
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
 
-\bibitem{wasmdec}
-Web assembly decompiler open-source (2018),
-  \url{https://github.com/wwwg/wasmdec/}
-
 \bibitem{andrychowicz2015malleability}
 Andrychowicz, M., Dziembowski, S., Malinowski, D., Mazurek, {\L}.: On the
   malleability of bitcoin transactions. In: International Conference on
@@ -76,11 +72,6 @@ Hinteregger, A., Haslhofer, B.: An empirical analysis of monero cross-chain
 Howard, M., Lipner, S.: The security development lifecycle, vol.~8. Microsoft
   Press Redmond (2006)
 
-\bibitem{taintAnalysis}
-J~Newsome, D.S.: Dynamic taint analysis for automatic detection, analysis, and
-  signaturegeneration of exploits on commodity software (2005),
-  \url{http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.307.8389&rep=rep1&type=pdf/}
-
 \bibitem{eosContractSecurity}
 Jing, K.: {EOS} smart contract development security best practices.
   \url{https://github.com/slowmist/eos-smart-contract-security-best-practices/blob/master/README_EN.md}
@@ -99,10 +90,6 @@ Karame, G.O., Androulaki, E., Capkun, S.: Double-spending fast payments in
 \bibitem{kim2019is}
 Kim, M., Kwon, Y., Kim, Y.: {Is Stellar As Secure As You Think?} IEEE Security
   and Privacy on the Blockchain (IEEE S\&B 2019)  (2019)
-
-\bibitem{Symbolic_execution}
-King, J.C.: Symbolic execution and program testing (1997),
-  \url{https://yurichev.com/mirrors/king76symbolicexecution.pdf}
 
 \bibitem{krupp2018teether}
 Krupp, J., Rossow, C.: teether: {G}nawing at ethereum to automatically exploit
