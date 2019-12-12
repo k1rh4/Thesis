@@ -7,6 +7,7 @@
 \contentsline {figure}{\numberline {4.2}{\ignorespaces The amount of \textsc {eos-ram}\tmspace +\thinmuskip {.1667em}consumed by the SCP RAM-drain\tmspace +\thinmuskip {.1667em}attack.}}{12}{figure.4.2}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces The estimated \textsc {eos-ram}\tmspace +\thinmuskip {.1667em}loss by the RAMsomware\tmspace +\thinmuskip {.1667em}attack.}}{13}{figure.4.3}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Audit tool system flow}}{15}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces E-SCV Architecture}}{16}{figure.5.2}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces E-SCV Architecture}}{17}{figure.6.1}
 \addvspace {10\p@ }

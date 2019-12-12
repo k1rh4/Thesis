@@ -83,8 +83,8 @@
 % @command title 논문 제목(title of thesis)
 % @options [default: (none)]
 % - korean: 한글제목(korean title) | english: 영문제목(english title)
-\title[korean] {이오스 자원관리 시스템 취약점 분석}
-\title[english]{Who Spent My EOS? On the (In)Security of Resource Management of EOS.IO}
+\title[korean] {위임 지분 증명 방식 가상화폐의 리소스 관리 위협 분석(이오스 자원관리 시스템 취약점 분석)}
+\title[english]{Why Decentralized resource management is difficult: vulnerability analysis of resource utilization of EOS.IO}
 
 % @note 표지에 출력되는 제목을 강제로 줄바꿈하려면 \linebreak 을 삽입.
 %       \\ 나 \newline 등을 사용하면 안됩니다. (아래는 예시)
@@ -121,12 +121,12 @@
 % @usage   \advisor[options]{...한글이름...}{...영문이름...}{signed|nosign}
 % @options [default: major]
 % - major: 주 지도교수  | coopr: 공동 지도교수
-\advisor[major]{김용대}{Yong-Dae Kim}{signed}
-\advisor[major2]{김용대}{Yong-Dae Kim}{signed} %한글 성과 한글 이름을 모두 붙여 써 주시기 바랍니다.
-\advisor[coopr]{손수엘}{Soo-el Son}{}
-\advisor[coopr2]{손수엘}{Soo-el Son}{} 
+\advisor[major]{김용대}{Yongdae Kim}{signed}
+\advisor[major2]{김용대}{Yongdae Kim}{signed} %한글 성과 한글 이름을 모두 붙여 써 주시기 바랍니다.
+%\advisor[coopr]{손수엘}{Sooel Son}{}
+%\advisor[coopr2]{손수엘}{Soo-el Son}{} 
 \advisorinfo{Graduate school of information security} %제출승인서에 들어가는 교수님 정보, advisor's information  
-
+%Yongdae
 %For final draft
 %\advisor[coopr]{홍 길 동}{Gil-Dong Hong}{nosign}
 %\advisor[coopr2]{홍길동}{Gil-Dong Hong}{nosign}    %한글 성과 한글 이름을 모두 붙여 써 주시기 바랍니다.
@@ -246,8 +246,8 @@
 		\input{sections/chapter1/background}
 		\input{sections/chapter1/attackModel}
 		\input{sections/chapter1/attack}
-		\input{sections/chapter1/defense}
 		\input{sections/chapter1/scalarable}
+		\input{sections/chapter1/defense}
 		\input{sections/chapter1/RelatedWork}
 		\input{sections/conclusion}
 
@@ -279,12 +279,12 @@
 	가장 먼저 학술연수 파견이라는 좋은 기회로 저를 KAIST로 보내주신 삼성 리서치의 황용호 랩장님께 감사를 드리고 싶습니다. 부하 직원을 발전 시키는 상사가 좋은 상사라는 말씀을 해주시며 이상섭이라는 한 사원에게 2년이라는 긴 시간을 투자해 주신 것은 단순히 존경스러운 상사를 넘어 인생의 멘토로 평생 가슴에 품고 살것 같습니다. 
 	더불어 저를 선택해 주시고, 학교를 들어오기 전 부터 많은 조언을 주셨던 김용대 교수님께 특별히 감사의 말씀을 드리고 싶습니다. 
 	
-	둘째로 늘 창의적인 아이디어가 번뜩이는 해킹-크리에이터 (김)대준이, 논문 Writing이란 이런 것이다를 보여준 동관이, writing더불어 석사 생활의 tiping point를 만들어주신 손수엘 교수님께 무엇보다 감사의 말씀을 전합니다. 이 분들이 없었다면 너무나 많은 것을 놓치고 졸업을 했을 것 같습니다. 
+	둘째로 늘 창의적인 아이디어가 번뜩이는 해킹-크리에이터 (김)대준이, "논문 Writing이란 이런것이다"를 보여준 동관이, writing더불어 석사 생활의 tiping point를 만들어주신 손수엘 교수님께 무엇보다 감사의 말씀을 전합니다. 이 분들이 없었다면 너무나 많은 것을 놓치고 졸업을 했을 것 같습니다. 
 
-	셋째로 Sysec SA팀에게 감사의 인사를 드립니다. 분야무관, 모든 과제를 케어하는 정신적 지주 동관이 부터, 늘 뛰어난 판단력과 이성적인 조언을 많이 해준 동환이, fact advisor 민근이, 모든 기술들에 대한 답을 가지고 있던 갓 해커 은수, 2년을 함께 지내며 허당인 내가 놓치는 부분을 잘 항상 챙겨 주었던 현기, 곧 회사 메신져에서 볼 요한이, 보안 모든 분야를 팔로우하는 general hacker 창훈이, 주 분야가 아닌 새로운 분야도 모든 빨리 배우고 익숙해지는 브레인 묘준이. 이들 모두 덕에 재미있고 의미 있는 2년을 보내고 졸업하게 되었습니다. 
+	셋째로 Sysec SA팀에게 감사의 인사를 드립니다. 분야무관, 모든 과제를 케어하는 팀의 정신적지주인 동관이 부터, 늘 뛰어난 판단력과 이성적인 조언을 많이 해준 동환이, fact advisor 민근이, 모든 기술들에 대한 답을 가지고 있던 갓 해커 은수, 2년을 함께 지내며 허당인 내가 놓치는 부분을 잘 항상 챙겨 주었던 현기, 곧 회사 메신져에서 볼 요한이, 보안 모든 분야를 팔로우하는 general hacker 창훈이, 주 분야가 아닌 새로운 분야도 모든 빨리 배우고 익숙해지는 브레인 묘준이. 이들 모두 덕에 재미있고 의미 있는 2년을 보내고 졸업하게 되었습니다. 
 	그 외에도 타팀이자, 나이 많은 형인데도 외면해 주지 않고 케어 해준 상욱이, 지호, 도현이, 철준이, 민철이, 호준이, 수빈이, 민정이, (권)유진이 그리고 적진 않았지만 그 외 Syssec 친구들 너무너무 고맙습니다.
-	그리고 정말 좋은 추억을 만들어준 엄청난 실력+인성까지 반듯한 갓 해커들이 집합: Kaishack 멤버들 에게도 너무나 고마움을 표하고 싶습니다.
-	더불어 1학년 1학기 때 같은 조별 과제로 뭉쳤다가 베스트 프랜드가 된 엘리트들 (오)동현이, 박선녀, 김홍식이! 2년 동안 마음의 안식처 같은 카톡방을 꼽으라면 단연 이친구들의 카톡방이였고 덕분에 재미있는 석사 생활을 보낼 수 있었습니다.
+	그리고 SCTF부터 DEFCON까지 좋은 추억을 만들어준 엄청난 실력+인성까지 반듯한 갓 해커들이 집합: Kaishack 멤버들 에게도 너무나 고마움을 표하고 싶습니다.
+	더불어 1학년 1학기 때 같은 조별 과제로 뭉쳤다가 베스트 프랜드가 된 엘리트들, (오)동현이, 박선녀, 김홍식이! 2년 동안 마음의 안식처 같은 카톡방을 꼽으라면 단연 이친구들의 카톡방이였고 덕분에 재미있는 석사 생활을 보낼 수 있었습니다.
 
 	마지막으로 정신적 고민의 순간에 늘 정신적 지주가 되어주신 어머니, 아버지, 그리고 힘들 때는 응원해주고 어려울때는 안식처가 되어주며 늘 옆에서 지켜준 은이에게 무한한 감사의 말씀을 전하고 싶습니다.
 

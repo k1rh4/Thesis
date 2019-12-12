@@ -14,19 +14,19 @@
 \contentsline {subsection}{\numberline {4.2.1}SCP CPU-drain\tmspace +\thinmuskip {.1667em}attack}{10}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}SCP RAM-drain\tmspace +\thinmuskip {.1667em}attack}{11}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}RAMsomware\tmspace +\thinmuskip {.1667em}attack}{13}{subsection.4.2.3}
-\contentsline {chapter}{\numberline {Chapter 5.}Mitigation }{15}{chapter.5}
-\contentsline {section}{\numberline {5.1}Preventative measures against attacks}{15}{section.5.1}
-\contentsline {section}{\numberline {5.2}Shifting the payment responsibility}{15}{section.5.2}
-\contentsline {section}{\numberline {5.3}Fine-grained permission control}{16}{section.5.3}
-\contentsline {chapter}{\numberline {Chapter 6.}Scalability evaluation }{17}{chapter.6}
-\contentsline {section}{\numberline {6.1}Crawling EOS Smart Contract}{17}{section.6.1}
-\contentsline {section}{\numberline {6.2}Regulating binary format ABI to JSON format ABI}{17}{section.6.2}
-\contentsline {section}{\numberline {6.3}EOSRAY}{18}{section.6.3}
-\contentsline {section}{\numberline {6.4}Analyzer}{18}{section.6.4}
-\contentsline {section}{\numberline {6.5}CFG recovery}{18}{section.6.5}
-\contentsline {section}{\numberline {6.6}Reachability Checker}{19}{section.6.6}
-\contentsline {section}{\numberline {6.7}Define Sensitive Functions}{19}{section.6.7}
-\contentsline {section}{\numberline {6.8}Limitation and Evaluation}{19}{section.6.8}
+\contentsline {chapter}{\numberline {Chapter 5.}Resource drain attack Automatic audit tool }{15}{chapter.5}
+\contentsline {section}{\numberline {5.1}Crawling EOS Smart Contract}{15}{section.5.1}
+\contentsline {section}{\numberline {5.2}Regulating binary format ABI to JSON format ABI}{15}{section.5.2}
+\contentsline {section}{\numberline {5.3}EOSRAY}{16}{section.5.3}
+\contentsline {section}{\numberline {5.4}Analyzer}{17}{section.5.4}
+\contentsline {section}{\numberline {5.5}CFG recovery}{17}{section.5.5}
+\contentsline {section}{\numberline {5.6}Reachability Checker}{17}{section.5.6}
+\contentsline {section}{\numberline {5.7}Define Sensitive Functions}{18}{section.5.7}
+\contentsline {section}{\numberline {5.8}Limitation and Evaluation}{18}{section.5.8}
+\contentsline {chapter}{\numberline {Chapter 6.}Mitigation }{19}{chapter.6}
+\contentsline {section}{\numberline {6.1}Preventative measures against attacks}{19}{section.6.1}
+\contentsline {section}{\numberline {6.2}Shifting the payment responsibility}{19}{section.6.2}
+\contentsline {section}{\numberline {6.3}Fine-grained permission control}{20}{section.6.3}
 \contentsline {chapter}{\numberline {Chapter 7.}Related work }{21}{chapter.7}
 \contentsline {section}{\numberline {7.1}Security analysis of blockchain systems}{21}{section.7.1}
 \contentsline {section}{\numberline {7.2}Security analysis of EOS.IO\tmspace +\thinmuskip {.1667em}}{21}{section.7.2}
