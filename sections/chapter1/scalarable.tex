@@ -89,7 +89,7 @@ We need to change WASM-file to WAST-file which is a more convenient type for ana
 % 어디에 쓰일 것인지에 대해 설명 (What)
 The main standard point that decides a bug is that data reachability. This means that if the sensitive function exists in the function without input data, it is not a bug. thus, E-SCV makes a control flow graph (CFG) base on basic block units to the tree data structure shape. Then, E-SCV marks the function's arguments and tracks the arguments every single step. If the argument reach branch, E-SCV judge reachability using taint analysis. This process is terminated when arguments reach the leaf node or sensitive function.  
 
-\section{CFG recovery}
+\subsection{CFG recovery}
 %control-flow-graph(CFG) recovery는 일반적인 프로그램 자동 분석 시스템에서 자주 사용되는 기법이다.  이렇게 만들어진 각각의 베이직블럭의 자료구조에는 각 블럭에서의 변수값의 변위를 tracking할 수 있도록 저장하고 있고, 각 블럭별 코드에서 사용된 코드들의 연산들을 일괄적으로 관리 하고 있다. 
 In computer science, a control-flow graph (CFG) is a representation, using graph notation, of all paths that might be traversed through a program during its execution.
 In a control-flow graph each node in the graph represents a basic block, i.e. a straight-line piece of code without any jumps or jump targets; jump targets start a block, and jumps end a block. Directed edges are used to represent jumps in the control flow. There are, in most presentations, two specially designated blocks: the entry block, through which control enters into the flow graph, and the exit block, through which all control flow leaves
@@ -97,7 +97,7 @@ In a control-flow graph each node in the graph represents a basic block, i.e. a 
 
 \input{tables/escv}
 
-\section{Reachability Checker}
+\subsection{Reachability Checker}
 %각 Basic Block 단위로 나뉘어진 PATH를 이용해 취약한 함수가 마킹된 블록에 도달이 가능한지 확인하고, 해당 함수가 유저에 의해 조작이 될 수 있음을 확인해야 한다. 
 %따라서, 함수가 포함된 블록부터 엔트리 함수까지의 경로에 저장된 Constraint를 Depth First Search(DFS) 알고리즘으로 구한 뒤,
 %각 블럭을 순회하는 기준은 Depth first search(DFS) 기준이며, code의 flow가 정의된 취점에 민감한 함수에 도달 할 경우, back-tracing 을 하며 지금까지 거쳐왔던 노드들의 자료구조에 저장된 변수들과 연산자들을 계산하며 빠져나오게 된다.
@@ -107,7 +107,7 @@ After reconstructing, E-SCV has to mark the function's arguments and track the a
 
 
 % send_dereffer(), db_update_i64, db_store_i64, memcpy etc... 
-\section{Define Sensitive Functions}
+\subsection{Define Sensitive Functions}
 The send\_dereffer() API use EOS-CPU which has to staking EOS coin. So, To reduce unnecessary waste of resources, If the developer wants to use send\_dereffer() APIs, s/he is supposed to set authorization for using its. db\_update\_i64() and db\_store\_i64() are also have to set strict ram-payer for preventing overcharge EOS-RAM which has to purchase by not only attacker but also benign users. This is just the developers mistake. so we evaluated how many smart contracts that have mistake is being in real EOS-ecosystem using E-SCV.
 
 \section{Limitation and Evaluation}

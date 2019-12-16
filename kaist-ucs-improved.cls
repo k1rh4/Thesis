@@ -614,16 +614,26 @@ pdfpagelabels, %HOCHEOL MODIFIED
 		\renewcommand{\@childAcademNameEng}{Web Science Technology}
 		\renewcommand{\@degreeField}{#2}
 		\renewcommand{\@degreeversion}{#3}}{}     
+	\ifthenelse{\equal{#1}{AA}}
+	{\renewcommand{\@degreeCode}{\@degreePrefix #1}
+		\renewcommand{\@childDeptNameKor}{정보보호대학원}
+		\renewcommand{\@childDeptNameEng}{Graduate School of Information Security}
+		\renewcommand{\@parentDeptNameKor}{}
+		\renewcommand{\@parentDeptNameEng}{}
+		\renewcommand{\@parentAcademNameEng}{}
+		\renewcommand{\@childAcademNameEng}{Computer Science (Information Security)}
+		\renewcommand{\@degreeField}{#2}
+		\renewcommand{\@degreeversion}{#3}}{}
 	\ifthenelse{\equal{#1}{IS}}
 	{\renewcommand{\@degreeCode}{\@degreePrefix #1}
 		\renewcommand{\@childDeptNameKor}{정보보호대학원}
 		\renewcommand{\@childDeptNameEng}{Graduate School of Information Security}
 		\renewcommand{\@parentDeptNameKor}{전산학부}
-		\renewcommand{\@parentDeptNameEng}{School of Computing (Graduate school of information security)}
+		\renewcommand{\@parentDeptNameEng}{School of Computing}
 		\renewcommand{\@parentAcademNameEng}{Computer Science}
 		\renewcommand{\@childAcademNameEng}{Information Security}
 		\renewcommand{\@degreeField}{#2}
-		\renewcommand{\@degreeversion}{#3}}{}  
+		\renewcommand{\@degreeversion}{#3}}{}
 	\ifthenelse{\equal{#1}{SEP}}
 	{\renewcommand{\@degreeCode}{\@degreePrefix #1}
 		\renewcommand{\@childDeptNameKor}{소프트웨어대학원프로그램}
